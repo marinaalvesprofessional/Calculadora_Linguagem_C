@@ -1,0 +1,307 @@
+#include <stdio.h>
+#include <math.h>
+
+// 1. Soma
+double soma(double a, double b) {
+    return a + b;
+}
+
+// 2. Subtração
+double subtracao(double a, double b) {
+    return a - b;
+}
+
+// 3. Multiplicação
+double multiplicacao(double a, double b) {
+    return a * b;
+}
+
+// 4. Divisão
+double divisao(double a, double b) {
+    if (b == 0) {
+        printf("Erro: divisao por zero!\n");
+        return 0;
+    }
+    return a / b;
+}
+
+// 5. Potência
+double potencia(double a, double b) {
+    return pow(a, b);
+}
+
+// 6. Raiz quadrada
+double raiz(double a) {
+    if (a < 0) {
+        printf("Erro: numero negativo!\n");
+        return 0;
+    }
+    return sqrt(a);
+}
+
+// 7. Porcentagem
+double porcentagem(double a, double b) {
+    return (a * b) / 100;
+}
+
+// 8. Fatorial
+unsigned long long fatorial(int n) {
+    unsigned long long resultado = 1;
+
+    for (int i = 1; i <= n; i++) {
+        resultado *= i;
+    }
+
+    return resultado;
+}
+
+// 9. Resto da divisao
+int resto(int a, int b) {
+    if (b == 0) {
+        printf("Erro: divisao por zero!\n");
+        return 0;
+    }
+    return a % b;
+}
+
+// 10. Logaritmo
+double logaritmo(double a) {
+    if (a <= 0) {
+        printf("Erro: valor invalido!\n");
+        return 0;
+    }
+    return log(a);
+}
+
+// 11. Seno
+double seno(double a) {
+    return sin(a * M_PI / 180);
+}
+
+// 12. Cosseno
+double cosseno(double a) {
+    return cos(a * M_PI / 180);
+}
+
+// 13. Tangente
+double tangente(double a) {
+    return tan(a * M_PI / 180);
+}
+
+// 14. Valor absoluto
+double absoluto(double a) {
+    return fabs(a);
+}
+
+// 15. Arredondamento
+double arredondar(double a) {
+    return round(a);
+}
+
+// 16. Piso
+double piso(double a) {
+    return floor(a);
+}
+
+// 17. Teto
+double teto(double a) {
+    return ceil(a);
+}
+
+// 18. Inverso
+double inverso(double a) {
+    if (a == 0) {
+        printf("Erro: nao existe inverso de zero!\n");
+        return 0;
+    }
+    return 1 / a;
+}
+
+// 19. Media
+double media(double a, double b) {
+    return (a + b) / 2;
+}
+
+// 20. Exponencial
+double exponencial(double a) {
+    return exp(a);
+}
+
+
+int main() {
+
+    int opcao;
+    double a, b;
+    int x, y;
+
+    do {
+
+        printf("\n====================================\n");
+        printf("          CALCULADORA EM C\n");
+        printf("====================================\n");
+
+        printf(" 1 - Soma\n");
+        printf(" 2 - Subtracao\n");
+        printf(" 3 - Multiplicacao\n");
+        printf(" 4 - Divisao\n");
+        printf(" 5 - Potencia\n");
+        printf(" 6 - Raiz quadrada\n");
+        printf(" 7 - Porcentagem\n");
+        printf(" 8 - Fatorial\n");
+        printf(" 9 - Resto da divisao\n");
+        printf("10 - Logaritmo\n");
+        printf("11 - Seno\n");
+        printf("12 - Cosseno\n");
+        printf("13 - Tangente\n");
+        printf("14 - Valor absoluto\n");
+        printf("15 - Arredondamento\n");
+        printf("16 - Piso\n");
+        printf("17 - Teto\n");
+        printf("18 - Inverso\n");
+        printf("19 - Media\n");
+        printf("20 - Exponencial\n");
+        printf(" 0 - Sair\n");
+
+        printf("====================================\n");
+        printf("Escolha uma opcao: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+
+            case 1:
+                printf("Digite dois numeros: ");
+                scanf("%lf %lf", &a, &b);
+                printf("Resultado: %.2lf\n", soma(a, b));
+                break;
+
+            case 2:
+                printf("Digite dois numeros: ");
+                scanf("%lf %lf", &a, &b);
+                printf("Resultado: %.2lf\n", subtracao(a, b));
+                break;
+
+            case 3:
+                printf("Digite dois numeros: ");
+                scanf("%lf %lf", &a, &b);
+                printf("Resultado: %.2lf\n", multiplicacao(a, b));
+                break;
+
+            case 4:
+                printf("Digite dois numeros: ");
+                scanf("%lf %lf", &a, &b);
+                printf("Resultado: %.2lf\n", divisao(a, b));
+                break;
+
+            case 5:
+                printf("Digite a base e o expoente: ");
+                scanf("%lf %lf", &a, &b);
+                printf("Resultado: %.2lf\n", potencia(a, b));
+                break;
+
+            case 6:
+                printf("Digite um numero: ");
+                scanf("%lf", &a);
+                printf("Resultado: %.2lf\n", raiz(a));
+                break;
+
+            case 7:
+                printf("Digite o numero e a porcentagem: ");
+                scanf("%lf %lf", &a, &b);
+                printf("Resultado: %.2lf\n", porcentagem(a, b));
+                break;
+
+            case 8:
+                printf("Digite um numero inteiro: ");
+                scanf("%d", &x);
+
+                if (x < 0) {
+                    printf("Erro: numero negativo!\n");
+                } else {
+                    printf("Resultado: %llu\n", fatorial(x));
+                }
+                break;
+
+            case 9:
+                printf("Digite dois numeros inteiros: ");
+                scanf("%d %d", &x, &y);
+                printf("Resultado: %d\n", resto(x, y));
+                break;
+
+            case 10:
+                printf("Digite um numero: ");
+                scanf("%lf", &a);
+                printf("Resultado: %.2lf\n", logaritmo(a));
+                break;
+
+            case 11:
+                printf("Digite o angulo em graus: ");
+                scanf("%lf", &a);
+                printf("Resultado: %.4lf\n", seno(a));
+                break;
+
+            case 12:
+                printf("Digite o angulo em graus: ");
+                scanf("%lf", &a);
+                printf("Resultado: %.4lf\n", cosseno(a));
+                break;
+
+            case 13:
+                printf("Digite o angulo em graus: ");
+                scanf("%lf", &a);
+                printf("Resultado: %.4lf\n", tangente(a));
+                break;
+
+            case 14:
+                printf("Digite um numero: ");
+                scanf("%lf", &a);
+                printf("Resultado: %.2lf\n", absoluto(a));
+                break;
+
+            case 15:
+                printf("Digite um numero: ");
+                scanf("%lf", &a);
+                printf("Resultado: %.2lf\n", arredondar(a));
+                break;
+
+            case 16:
+                printf("Digite um numero: ");
+                scanf("%lf", &a);
+                printf("Resultado: %.2lf\n", piso(a));
+                break;
+
+            case 17:
+                printf("Digite um numero: ");
+                scanf("%lf", &a);
+                printf("Resultado: %.2lf\n", teto(a));
+                break;
+
+            case 18:
+                printf("Digite um numero: ");
+                scanf("%lf", &a);
+                printf("Resultado: %.4lf\n", inverso(a));
+                break;
+
+            case 19:
+                printf("Digite dois numeros: ");
+                scanf("%lf %lf", &a, &b);
+                printf("Resultado: %.2lf\n", media(a, b));
+                break;
+
+            case 20:
+                printf("Digite um numero: ");
+                scanf("%lf", &a);
+                printf("Resultado: %.2lf\n", exponencial(a));
+                break;
+
+            case 0:
+                printf("Calculadora encerrada!\n");
+                break;
+
+            default:
+                printf("Opcao invalida!\n");
+        }
+
+    } while (opcao != 0);
+
+    return 0;
+}
